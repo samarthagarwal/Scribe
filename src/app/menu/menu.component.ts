@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  firstName: string = "Internshala";
-  lastName: string = "Trainings";
-
-  number1: number = 10;
-  number2: number = 15;
+  disabledMyButton: boolean = false;
+  google: string = "https://www.google.com"
+  logo: string = "https://angular.io/assets/images/logos/angular/angular.svg";
   
   constructor() { }
 

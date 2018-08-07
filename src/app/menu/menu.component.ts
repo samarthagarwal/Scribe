@@ -13,6 +13,14 @@ export class MenuComponent implements OnInit {
   
   constructor() { }
 
+  sayHello(){
+    alert("Hello");
+  }
+
+  log(ev){
+    console.log(ev.target.value);
+  }
+
   ngOnInit() {
   }
 

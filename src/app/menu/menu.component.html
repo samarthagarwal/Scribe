@@ -1,14 +1,12 @@
 <div class="container">
 
-  <a role="button" class="btn btn-primary" [href]="google">
-    Go to Google
-  </a>
+  <input type="text" 
+    class="form-control"  
+    placeholder="Your name here"
+    [(ngModel)]="name">
 
-  <button type="button" class="btn btn-success" [disabled]="disabledMyButton" (click)="sayHello()">
-    I am disabled
-  </button>
+    <h1>{{ name }}</h1>
 
-  <input type="text" class="form-control" placeholder="Your name here" (change)="log($event)">
 </div>
 
 

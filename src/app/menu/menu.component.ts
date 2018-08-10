@@ -7,20 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  disabledMyButton: boolean = false;
-  google: string = "https://www.google.com"
-  logo: string = "https://angular.io/assets/images/logos/angular/angular.svg";
+  name: string = "Internshala";
   
   constructor() { }
 
-  sayHello(){
-    alert("Hello");
-  }
 
-  log(ev){
-    console.log(ev.target.value);
-  }
-
+  
   ngOnInit() {
   }
 

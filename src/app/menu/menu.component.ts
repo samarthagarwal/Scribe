@@ -7,22 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  name: string = "Internshala";
+  fruits: string[] = ["Plum"];
 
-  showGoogleButton: boolean = false;
-  
-  constructor() { }
+  constructor() { 
 
-  toggleGoogleButton(){
-    this.showGoogleButton = !this.showGoogleButton;
-  }
+    this.fruits.push("Apples");
+    this.fruits.push("Oranges");
+    this.fruits.push("Grapes");
+    this.fruits.push("Bananas");
+    this.fruits.push("Grapes");
+    this.fruits.push("Melons");
 
-  shouldDisplay(){
-    if(this.name == "Internshala"){
-      return true;
-    } else {
-      return false;
-    }
+    console.log(this.fruits)
+
   }
   
   ngOnInit() {

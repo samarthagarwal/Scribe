@@ -1,12 +1,17 @@
 <div class="container">
 
-  <input type="text" 
-    class="form-control"  
-    placeholder="Your name here"
-    [(ngModel)]="name">
+  <a role="button" 
+    class="btn btn-primary" 
+    [href]="google"
+    *ngIf="shouldDisplay()">
+    Go to Google
+  </a>
 
-    <h1>{{ name }}</h1>
+  <button type="button" class="btn btn-success" [disabled]="disabledMyButton" (click)="toggleGoogleButton()">
+   Toogle Google Button
+  </button>
 
+  <input type="text" class="form-control" placeholder="Your name here" [(ngModel)]="name">
 </div>
 
 

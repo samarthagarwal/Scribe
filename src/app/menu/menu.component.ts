@@ -7,18 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  fruits: string[] = ["Plum"];
+  people: any[] = [{
+    "name": "Bob",
+    "age": 28,
+    "country": "AU"
+  }, {
+    "name": "Alice",
+    "age": 26,
+    "country": "US"
+  }, {
+    "name": "Sherlock",
+    "age": 41,
+    "country": "UK"
+  }, {
+    "name": "John",
+    "age": 35,
+    "country": "IN"
+  }, {
+    "name": "Noddy",
+    "age": 45,
+    "country": "GE"
+  }]
 
   constructor() { 
-
-    this.fruits.push("Apples");
-    this.fruits.push("Oranges");
-    this.fruits.push("Grapes");
-    this.fruits.push("Bananas");
-    this.fruits.push("Grapes");
-    this.fruits.push("Melons");
-
-    console.log(this.fruits)
 
   }
   

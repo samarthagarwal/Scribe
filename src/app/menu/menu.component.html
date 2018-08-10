@@ -3,8 +3,14 @@
   <ul class="list-group">
     <li 
       class="list-group-item"
-      *ngFor="let fruit of fruits; let i = index">
-      {{ i+1 }} - {{ fruit }}
+      *ngFor="let person of people;" [ngSwitch]="person.country">
+      
+      <div *ngSwitchCase="'IN'" class="text-primary">{{ person.name }} - {{ person.country }}</div>
+      <div *ngSwitchCase="'US'" class="text-danger">{{ person.name }} - {{ person.country }}</div>
+      <div *ngSwitchCase="'UK'" class="text-success">{{ person.name }} - {{ person.country }}</div>
+      <div *ngSwitchCase="'AU'" class="text-warning">{{ person.name }} - {{ person.country }}</div>
+      <div *ngSwitchDefault class="text-dark">{{ person.name }} - {{ person.country }}</div>
+
     </li>
   </ul>
 

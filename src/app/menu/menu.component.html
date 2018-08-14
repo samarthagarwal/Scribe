@@ -3,13 +3,17 @@
   <ul class="list-group">
     <li 
       class="list-group-item"
-      *ngFor="let person of people;" [ngSwitch]="person.country">
+      *ngFor="let person of people;">
       
-      <div *ngSwitchCase="'IN'" class="text-primary">{{ person.name }} - {{ person.country }}</div>
-      <div *ngSwitchCase="'US'" class="text-danger">{{ person.name }} - {{ person.country }}</div>
-      <div *ngSwitchCase="'UK'" class="text-success">{{ person.name }} - {{ person.country }}</div>
-      <div *ngSwitchCase="'AU'" class="text-warning">{{ person.name }} - {{ person.country }}</div>
-      <div *ngSwitchDefault class="text-dark">{{ person.name }} - {{ person.country }}</div>
+      <div [ngClass]="{
+        'text-primary': person.country == 'IN',
+        'text-danger': person.country == 'AU',
+        'text-success': person.country == 'US',
+        'text-info': person.country == 'UK',
+        'text-warning': person.country == 'GE'
+      }" [ngStyle]="{
+        'font-size': getFontSize(person)
+      }"> {{ person.name }} - {{ person.country }} </div>
 
     </li>
   </ul>

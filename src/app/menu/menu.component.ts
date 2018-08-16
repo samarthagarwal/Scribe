@@ -33,14 +33,12 @@ export class MenuComponent implements OnInit {
 
   }
 
-  getFontSize(person){
-
-    if(person.country == 'IN'){
-      return '24px';
+  getTextSize(person){
+    if(person.country == "IN"){
+      return 24;
     } else if(person.country == "US"){
-      return '22px'
+      return 36;
     }
-
   }
   
   ngOnInit() {

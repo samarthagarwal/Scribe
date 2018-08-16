@@ -11,9 +11,7 @@
         'text-success': person.country == 'US',
         'text-info': person.country == 'UK',
         'text-warning': person.country == 'GE'
-      }" [ngStyle]="{
-        'font-size': getFontSize(person)
-      }"> {{ person.name }} - {{ person.country }} </div>
+      }" [style.font-size.px]="getTextSize(person)"> {{ person.name }} - {{ person.country }} </div>
 
     </li>
   </ul>

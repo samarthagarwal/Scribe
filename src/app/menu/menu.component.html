@@ -1,19 +1,7 @@
 <div class="container">
 
   <ul class="list-group">
-    <li 
-      class="list-group-item"
-      *ngFor="let person of people;">
-      
-      <div [ngClass]="{
-        'text-primary': person.country == 'IN',
-        'text-danger': person.country == 'AU',
-        'text-success': person.country == 'US',
-        'text-info': person.country == 'UK',
-        'text-warning': person.country == 'GE'
-      }" [style.font-size.px]="getTextSize(person)"> {{ person.name }} - {{ person.country }} </div>
-
-    </li>
+    <app-person *ngFor="let person of people" [person]="person"></app-person>
   </ul>
 
 </div>

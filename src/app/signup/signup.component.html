@@ -9,7 +9,7 @@
     </div>
 
     <div class="alert alert-danger"
-      *ngIf="signupform.controls['first_name'].touched == true && signupform.controls['first_name'].invalid == true"
+      *ngIf="signupform.controls['first_name'] && signupform.controls['first_name'].touched == true && signupform.controls['first_name'].invalid == true"
     >
       First name is required.
     </div>

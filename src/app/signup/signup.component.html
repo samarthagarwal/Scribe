@@ -11,14 +11,14 @@
 
           <div class="card-text">
 
-            <form>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
               <div class="form-row">
                 <div class="form-group col-sm-6">
-                  <input type="text" class="form-control" placeholder="First Name">
+                  <input type="text" class="form-control" placeholder="First Name" [formControl]="myForm.controls['firstName']">
                 </div>
   
                 <div class="form-group col-sm-6">
-                  <input type="text" class="form-control" placeholder="Last Name">
+                  <input type="text" class="form-control" placeholder="Last Name" [formControl]="myForm.controls['lastName']">
                 </div>
               </div>
 
@@ -28,7 +28,7 @@
 
               <div class="form-group">
 
-                <input type="email" placeholder="Enter your email" class="form-control">
+                <input type="email" placeholder="Enter your email" class="form-control" [formControl]="myForm.controls['email']">
                 <small class="form-text text-muted">
                   We'll never share your email with anyone else
                 </small>
@@ -40,11 +40,11 @@
               </div>
 
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" [formControl]="myForm.controls['password']">
               </div>
 
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirm Password">
+                <input type="password" class="form-control" placeholder="Confirm Password" [formControl]="myForm.controls['confirmPassword']">
               </div>
 
               <div class="alert alert-danger">

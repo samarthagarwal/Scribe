@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 @Component({
   selector: 'app-signup',
@@ -41,7 +43,25 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(signupform){
-    console.log(signupform.value);
+    let email: string = signupform.value.email;
+    let password: string = signupform.value.password;
+    let firstName: string = signupform.value.firstName;
+    let lastName: string = signupform.value.lastName;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((response) => {
+      console.log(response);
+
+      let randomNumber = Math.floor(Math.random() * 1000)
+
+      response.user.updateProfile({
+        displayName: firstName + " " + lastName,
+        photoURL: "https://api.adorable.io/avatars/" +  randomNumber
+      })
+    }).catch((error) => {
+      console.log(error);
+    })
+
+
   }
 
   ngOnInit() {

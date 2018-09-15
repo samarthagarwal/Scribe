@@ -11,6 +11,8 @@ import 'firebase/auth';
 export class SignupComponent implements OnInit {
 
   myForm: FormGroup;
+  message: string = "";
+  userError: any;
 
   constructor(public fb: FormBuilder) {
 
@@ -56,9 +58,12 @@ export class SignupComponent implements OnInit {
       response.user.updateProfile({
         displayName: firstName + " " + lastName,
         photoURL: "https://api.adorable.io/avatars/" +  randomNumber
+      }).then(() => {
+        this.message = "You have been signed up successfully. Please login."
       })
     }).catch((error) => {
       console.log(error);
+      this.userError = error;
     })
 
 

@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthService } from './auth.service';
+
 let config = {
   apiKey: "AIzaSyDyT_uO9pFs3nDvJWDGH78z14Rkz8G-Je4",
   authDomain: "scribe-d63dd.firebaseapp.com",
@@ -30,7 +32,7 @@ firebase.initializeApp(config);
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,12 +10,11 @@ export class AuthService {
   constructor() { }
 
   login(email: string, password: string){
-    return firebase.auth().signInWithEmailAndPassword(email, password)
+    
   }
 
-  signup(email: string, password: string){
+  signup(email: string, password: string, first_name: string, last_name: string){
     
-    return firebase.auth().createUserWithEmailAndPassword(email, password)
 
   }
 

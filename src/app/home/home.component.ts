@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  name: string = 'Internshala';
+  name: string = 'inTerNsHala';
 
   amount: number = 1999.123;
 

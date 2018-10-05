@@ -13,6 +13,7 @@ import { AuthService } from './auth.service';
 import { HomeComponent } from './home/home.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { AppRoutingModule } from './/app-routing.module';
+import { MenuComponent } from './menu/menu.component';
 
 let config = {
   apiKey: "AIzaSyDyT_uO9pFs3nDvJWDGH78z14Rkz8G-Je4",
@@ -31,6 +32,7 @@ firebase.initializeApp(config);
     LoginComponent,
     HomeComponent,
     CapitalizePipe,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

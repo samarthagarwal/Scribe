@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   message: string = "";
   userError: any;
 
-  constructor(public fb: FormBuilder, public authService: AuthService) {
+  constructor(public fb: FormBuilder, public authService: AuthService, public router: Router) {
 
     this.myForm = this.fb.group({
       email: ['', [Validators.email, Validators.required]],
@@ -30,6 +31,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(form.value.email, form.value.password).then((data) => {
       console.log(data);
       this.message = "You have been logged in successfully."
+
+      this.router.navigate(['/myblogs'])
+
     }).catch((error) => {
       console.log(error);
       this.userError = error;

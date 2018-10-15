@@ -16,6 +16,10 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MenuComponent } from './menu/menu.component';
 import { MyblogsComponent } from './myblogs/myblogs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CreateComponent } from './create/create.component';
+
+import { NgxEditorModule } from 'ngx-editor';
+import { HttpClientModule } from '@angular/common/http';
 
 let config = {
   apiKey: "AIzaSyDyT_uO9pFs3nDvJWDGH78z14Rkz8G-Je4",
@@ -37,12 +41,15 @@ firebase.initializeApp(config);
     MenuComponent,
     MyblogsComponent,
     ProfileComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxEditorModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

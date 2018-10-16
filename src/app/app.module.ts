@@ -20,6 +20,7 @@ import { CreateComponent } from './create/create.component';
 
 import { NgxEditorModule } from 'ngx-editor';
 import { HttpClientModule } from '@angular/common/http';
+import { PostComponent } from './post/post.component';
 
 let config = {
   apiKey: "AIzaSyDyT_uO9pFs3nDvJWDGH78z14Rkz8G-Je4",
@@ -42,6 +43,7 @@ firebase.initializeApp(config);
     MyblogsComponent,
     ProfileComponent,
     CreateComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

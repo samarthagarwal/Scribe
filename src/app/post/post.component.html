@@ -11,13 +11,13 @@
   </div>
 
   <div class="card-footer text-muted">
-    Posted on {{ postData.created | date: 'MMM dd, yyyy' }}
+    Posted on {{ postData.created.toDate() | date: 'MMM dd, yyyy' }}
 
     <button type="button" class="btn btn-danger card-link btn-sm float-right" *ngIf="user && user.uid == postData.owner" (click)="delete()">Delete</button>
 
   </div>
 
-  <a class="card-footer text-muted" *ngIf="(user && post.owner != user.uid) || !user" routerLink="/profile/{{post.owner}}">
+  <a class="card-footer text-muted" *ngIf="(user && postData.owner != user.uid) || !user" routerLink="/profile/{{postData.owner}}">
     View Writer's Profile
   </a>
 

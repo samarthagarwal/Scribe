@@ -5,7 +5,7 @@
     </div>
 
     <div class="card-text">
-      {{ postData.content }}
+      {{ postData.content.substring(0, 50)  }}... <a class="card-link" routerLink="/view/{{ post.id }}">Read More</a>
     </div>
 
   </div>

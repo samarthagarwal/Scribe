@@ -1,3 +1,6 @@
-<p>
-  view works!
-</p>
+<div class="row mt-5">
+  <div class="col-sm-8 offset-sm-2">
+    <h1>{{ post.title }}</h1>
+    <div [innerHTML]="post.content"></div>
+  </div>
+</div>

@@ -20,6 +20,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.postData = this.post.data();
+    console.log(this.postData)
     this.user = firebase.auth().currentUser;
   }
 

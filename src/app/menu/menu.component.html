@@ -27,7 +27,7 @@
       </li>
 
       <li class="nav-item right" *ngIf="loggedIn">
-        <a class="nav-link" routerLink="/" >My Profile</a>
+        <a class="nav-link" [routerLink]="'/profile/' + user.uid">My Profile</a>
       </li>
       <li class="nav-item right" *ngIf="loggedIn">
         <a class="nav-link" routerLink="/" (click)="logout()">Log out</a>

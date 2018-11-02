@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './post/post.component';
 import { ViewComponent } from './view/view.component';
 import { CommentsComponent } from './comments/comments.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 let config = {
   apiKey: "AIzaSyDyT_uO9pFs3nDvJWDGH78z14Rkz8G-Je4",
@@ -48,6 +49,7 @@ firebase.initializeApp(config);
     PostComponent,
     ViewComponent,
     CommentsComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

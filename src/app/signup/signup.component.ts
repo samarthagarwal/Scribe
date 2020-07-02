@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { AuthService } from '../auth.service';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,7 @@ export class SignupComponent implements OnInit {
   message: string = "";
   userError: any;
 
-  constructor(public fb: FormBuilder, public authService: AuthService) {
+  constructor(public fb: FormBuilder, public authService: AuthService, public router: Router) {
 
     this.myForm = this.fb.group({
       firstName: ['', [Validators.required]],
@@ -62,7 +63,9 @@ export class SignupComponent implements OnInit {
         bio: "",
         hobbies: ""
       }).then(() => {
-        this.message = "You have been signed up successfully. Please login."
+        this.message = "You have been signed up successfully.";
+        this.userError = null;
+        this.router.navigate(['/myblogs'])
       })
       
     

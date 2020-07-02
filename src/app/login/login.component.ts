@@ -31,11 +31,13 @@ export class LoginComponent implements OnInit {
     this.authService.login(form.value.email, form.value.password).then((data) => {
       console.log(data);
       this.message = "You have been logged in successfully."
+      this.userError = null;
 
       this.router.navigate(['/myblogs'])
 
     }).catch((error) => {
       console.log(error);
+      this.message = null;
       this.userError = error;
     })
 

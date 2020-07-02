@@ -14,10 +14,11 @@ export class MyblogsComponent implements OnInit {
   posts: any[] = [];
 
   constructor() {
-    firebase.firestore().settings({
-      timestampsInSnapshots: true
-    });
+    // firebase.firestore().settings({
+    //   timestampsInSnapshots: true
+    // });
     this.user = firebase.auth().currentUser;
+    console.log(this.user)
     this.getPosts();
   }
 

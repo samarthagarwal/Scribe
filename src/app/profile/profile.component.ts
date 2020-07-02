@@ -28,14 +28,14 @@ export class ProfileComponent implements OnInit {
 
   getProfile(id: string){
 
-    firebase.firestore().settings({
-      timestampsInSnapshots: true
-    })
+    // firebase.firestore().settings({
+    //   timestampsInSnapshots: true
+    // })
 
     firebase.firestore().collection("users").doc(id).get().then((documentSnapshot) => {
 
       this.user = documentSnapshot.data();
-      this.user.displayName = this.user.first_name + " " + this.user.last_name;
+      this.user.displayName = this.user.firstName + " " + this.user.lastName;
       this.user.id = documentSnapshot.id;
       this.user.hobbies = this.user.hobbies.split(",");
       console.log(this.user);

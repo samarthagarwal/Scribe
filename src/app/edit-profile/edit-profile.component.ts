@@ -27,7 +27,7 @@ export class EditProfileComponent implements OnInit {
     firebase.firestore().collection("users").doc(userId).get().then((documentSnapshot) => {
 
       this.user = documentSnapshot.data();
-      this.user.displayName = this.user.first_name + " " + this.user.last_name;
+      this.user.displayName = this.user.firstName + " " + this.user.lastName;
       this.user.id = documentSnapshot.id;
       console.log(this.user);
 

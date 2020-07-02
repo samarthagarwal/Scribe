@@ -1,0 +1,50 @@
+<div class="row background">
+  <div class="offset-sm-4 col-sm-4">
+
+    <div class="card text-blank">
+      <div class="card-body">
+        <div class="card-title text-center"><h5>Login using your email</h5></div>
+
+        <div class="card-text">
+
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Enter email" name="email" [formControl]="myForm.controls['email']">
+            </div>
+            
+            <div class="alert alert-danger" *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched">
+              A valid Email is required.
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Enter password" name="password" [formControl]="myForm.controls['password']">
+            </div>
+            
+            <div class="alert alert-danger" *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched">
+              Password is required.
+            </div>
+            
+            <div class="text-center">
+              <button type="submit" class="btn btn-block btn-warning round" [disabled]="!myForm.valid">Submit</button>
+            </div>
+
+          </form>
+
+          <div class="text-center mt-3">
+            <button class="btn btn-link" routerLink="/home">Don't have an account? Create One</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-success" *ngIf="message.length > 0">
+      You have been logged in successfully.
+    </div>
+    <div class="alert alert-danger" *ngIf="userError">
+      {{ userError.message }}
+    </div>
+
+  </div>
+</div>

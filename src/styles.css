@@ -8,3 +8,8 @@ body {
     height: 100%;
     font-family: 'Raleway', sans-serif;
 }
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}

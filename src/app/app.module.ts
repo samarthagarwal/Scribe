@@ -18,7 +18,7 @@ import { MyblogsComponent } from './myblogs/myblogs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateComponent } from './create/create.component';
 
-import { NgxEditorModule } from 'ngx-editor';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './post/post.component';
 import { ViewComponent } from './view/view.component';
@@ -56,7 +56,7 @@ firebase.initializeApp(config);
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgxEditorModule,
+    AngularEditorModule,
     HttpClientModule
   ],
   providers: [AuthService],

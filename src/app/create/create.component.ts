@@ -3,10 +3,6 @@ import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-// Add these imports for ngx-editor
-import { schema } from 'ngx-editor';
-import { DOMSerializer } from 'prosemirror-model';
-
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -24,17 +20,17 @@ export class CreateComponent implements OnInit {
   ngOnInit() {}
 
   createPost() {
-    let contentNode = schema.nodeFromJSON(this.content);
-    let html: DocumentFragment = DOMSerializer.fromSchema(
-      schema
-    ).serializeFragment(contentNode.content);
+    // let contentNode = schema.nodeFromJSON(this.content);
+    // let html: DocumentFragment = DOMSerializer.fromSchema(
+    //   schema
+    // ).serializeFragment(contentNode.content);
 
     firebase
       .firestore()
       .collection('posts')
       .add({
         title: this.title,
-        content: html,
+        content: this.content,
         owner: firebase.auth().currentUser.uid,
         created: firebase.firestore.FieldValue.serverTimestamp(),
       })

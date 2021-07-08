@@ -15,11 +15,10 @@ export class ProfileComponent implements OnInit {
  
   constructor(public activatedRoute: ActivatedRoute) { 
 
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(id);
-
-    this.getProfile(id);
-    this.getUsersPosts(id);
+    this.activatedRoute.params.subscribe((routeParams) => {
+      this.getProfile(routeParams.id);
+      this.getUsersPosts(routeParams.id);
+    });
 
   }
 

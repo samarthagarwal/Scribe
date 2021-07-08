@@ -1,5 +1,5 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,10 +18,6 @@ export class ViewComponent implements OnInit {
     let postId = this.activateRoute.snapshot.paramMap.get("postId");
 
     this.postId = postId;
-
-    firebase.firestore().settings({
-      timestampsInSnapshots: true
-    })
 
     firebase.firestore().collection("posts").doc(postId).get().then((docSnapshot) => {
 

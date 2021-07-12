@@ -1,3 +1,7 @@
 .round {
     border-radius: 50px;
 }
+
+.angular-editor-textarea {
+    height: 250px;
+}

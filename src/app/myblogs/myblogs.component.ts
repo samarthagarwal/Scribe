@@ -30,6 +30,7 @@ export class MyblogsComponent implements OnInit {
 
     firebase.firestore().collection("posts")
     .orderBy("created", "desc")
+    .limit(100)
     .get().then((querySnapshot) => {
 
       console.log(querySnapshot.docs);

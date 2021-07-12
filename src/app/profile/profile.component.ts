@@ -32,7 +32,6 @@ export class ProfileComponent implements OnInit {
     // })
 
     firebase.firestore().collection("users").doc(id).get().then((documentSnapshot) => {
-
       this.user = documentSnapshot.data();
       this.user.displayName = this.user.firstName + " " + this.user.lastName;
       this.user.id = documentSnapshot.id;

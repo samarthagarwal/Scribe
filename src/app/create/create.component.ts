@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-create',
@@ -14,6 +15,14 @@ export class CreateComponent implements OnInit {
   // content: string; changed for ngx-editor 5
   content: any;
   @Output('postCreated') postCreated = new EventEmitter();
+
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+  };
 
   constructor() {}
 
